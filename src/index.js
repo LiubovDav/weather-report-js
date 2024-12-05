@@ -1,6 +1,8 @@
 // Whole-script strict mode syntax
 "use strict";
 
+const DEFAULT_CITY = "Seattle";
+
 const state = {
   currentTemp: 50,
   currentCity: "Seattle",
@@ -8,7 +10,6 @@ const state = {
 };
 
 document.getElementById("tempValue").innerText = state.currentTemp;
-
 
 const initTempColor = () => {
   document.getElementById('tempValue').style.color = findTempColorStyle();
@@ -102,6 +103,17 @@ const openWeatherConditions = {
   Cloudy: "☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️",
 };
 
+const initDefaultCity = () => {
+  state.currentCity = DEFAULT_CITY;
+  document.getElementById("cityNameInput").value = state.currentCity;
+  document.getElementById("headerCityName").innerText = state.currentCity;
+}
+
+const updateCityValue = () => {
+  state.currentCity = document.getElementById("cityNameInput").value;
+  document.getElementById("headerCityName").innerText = state.currentCity;
+}
+
 const registerEventHandlers = () => {
   const increaseTempControl = document.getElementById("increaseTempControl");
   increaseTempControl.addEventListener("click", increaseTemp);
@@ -109,8 +121,12 @@ const registerEventHandlers = () => {
   const decreaseTempControl = document.getElementById("decreaseTempControl");
   decreaseTempControl.addEventListener("click", decreaseTemp);
 
-  const cityInputUpdate = document.querySelector("cityNameInput");
-  cityInputUpdate.addEventListener("input", updateCityValue)
+  const cityNameInput = document.getElementById("cityNameInput");
+  cityNameInput.addEventListener("input", updateCityValue);
+
+  const cityNameReset = document.getElementById("cityNameReset");
+  cityNameReset.addEventListener("click", initDefaultCity);
+
 };
 
 document.addEventListener("DOMContentLoaded", () => {
