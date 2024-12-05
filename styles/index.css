@@ -135,10 +135,6 @@ body {
     color: gold;
 }
 
-.yellow-green {
-    color: yellowgreen;
-}
-
 .green {
     color: green;
 }
@@ -153,6 +149,10 @@ body {
 
 .sunny {
     background-color: rgb(221, 255, 255);
+}
+
+.haze {
+    background-color: yellowgreen;
 }
 
 .rainy {
