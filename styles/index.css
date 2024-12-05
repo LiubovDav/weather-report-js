@@ -143,16 +143,16 @@ body {
     color: teal;
 }
 
-.cloudy {
-    background-color: lightgrey;
-}
-
 .sunny {
     background-color: rgb(221, 255, 255);
 }
 
 .haze {
     background-color: yellowgreen;
+}
+
+.cloudy {
+    background-color: lightgrey;
 }
 
 .rainy {
