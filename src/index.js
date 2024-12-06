@@ -6,7 +6,11 @@ const DEFAULT_CITY = "Seattle";
 const state = {
   currentTemp: 50,
   currentCity: "Seattle",
-  currentSky: "Sunny"
+  currentSky: "Sunny",
+  latitude: 123,
+  longitude: 123,
+  temperature: 123,
+  sky: "dfsfasd"
 };
 
 document.getElementById("tempValue").innerText = state.currentTemp;
@@ -78,19 +82,47 @@ const landscapeDictionary = {
 };
 
 const skiesDictionary = {
-  Sunny: "☁️ 🕊   ☀️ ☁️  🦅 ☁️",
-  Haze: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Ash: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Clear: "         ☀️   🕊       ",
+  Clouds: "☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️",
   Cloudy: "☁️ ☁️ ☁️ 🌤 ☁️ ☁️ ☁️",
+  Drizzle: "🌧🌈🌧🌧🌧🌦🌧🌧🌈🌧☁️☁️",
+  Dust: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Fog: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Haze: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Mist: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Rain: "🌧🌈⛈🌧🌧💧💧🌧🌦🌧💧🌧🌧",
   Rainy: "🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧",
+  Sand: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Smoke: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
+  Snow: "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨",
   Snowy: "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨",
+  Squall: "🌨⛈🌧🌨⛈🌧🌨⛈🌧",
+  Sunny: "☁️ 🕊   ☀️ ☁️  🦅 ☁️",
+  ThunderStorm: "⛈⛈⛈⛈⛈⛈⛈⛈⛈⛈⛈",
+  Tornado: "🌪⛈⛈🌪⛈⛈🌪⛈⛈"
 };
 
 const skiesColorDictionary = {
-  Sunny: "rgb(221, 255, 255)",
-  Haze: "yellowgreen",
+  Ash: "lightsteelblue",
+  Clear: "lightblue",
+  Clouds: "lightgrey",
   Cloudy: "lightgrey",
+  Drizzle: "lightblue",
+  Dust: "lightsteelblue",
+  Fog: "lightsteelblue",
+  Haze: "yellowgreen",
+  Mist: "lightsteelblue",
+  Rain: "lightblue",
   Rainy: "lightblue",
+  Sand: "lightsteelblue",
+  Smoke: "lightsteelblue",
+  Snow: "lightsteelblue",
   Snowy: "lightsteelblue",
+  Squall: "lightblue",
+  Sunny: "rgb(221, 255, 255)",
+  ThunderStorm: "lightblue",
+  Tornado: "lightblue"
 };
 
 // const skiesStyleDictionary = {
@@ -101,28 +133,11 @@ const skiesColorDictionary = {
 //   Snowy: "snowy",
 // };
 
-// const openWeatherConditions = {
-//   ThunderStorm: "⛈⛈⛈⛈⛈⛈⛈⛈⛈⛈⛈",
-//   Rain: "🌧🌈⛈🌧🌧💧💧🌧🌦🌧💧🌧🌧",
-//   Drizzle: "🌧🌈🌧🌧🌧🌦🌧🌧🌈🌧☁️☁️",
-//   Snow: "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨",
-//   Mist: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Smoke: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Haze: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Dust: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Fog: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Sand: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Ash: "🌫🌫🌫🌫🌫🌫🌫🌫🌫🌫",
-//   Squall: "🌨⛈🌧🌨⛈🌧🌨⛈🌧",
-//   Tornado: "🌪⛈⛈🌪⛈⛈🌪⛈⛈",
-//   Clear: "         ☀️   🕊       ",
-//   Cloudy: "☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️",
-// };
-
 const initDefaultCity = () => {
   state.currentCity = DEFAULT_CITY;
   document.getElementById("cityNameInput").value = state.currentCity;
   document.getElementById("headerCityName").innerText = state.currentCity;
+  getCurrentTemp();
 }
 
 const updateCityValue = () => {
@@ -140,6 +155,57 @@ const updateSky = () => {
   document.getElementById("gardenContent").style.backgroundColor = findGardenContentColor();
 }
 
+const getCurrentTemp = () => {
+  axios.get('http://127.0.0.1:5000/location',
+    {
+      params: {
+        q: document.getElementById("cityNameInput").value
+      }
+    })
+    .then((response) => {
+      state.latitude = response.data[0].lat;
+      state.longitude = response.data[0].lon;
+
+      console.log('success in findLatitudeAndLongitude!', state.latitude, state.longitude);
+
+      axios.get('http://127.0.0.1:5000/weather',
+        {
+          params: {
+            // lat: 47.6038321,
+            // lon: -122.330062
+            lat: state.latitude,
+            lon: state.longitude
+          }
+        })
+        .then((response) => {
+          state.temperature = response.data.main.temp;
+          state.sky = response.data.weather[0].main;
+    
+          console.log('success in find temperature and sky', Math.round(kelvinToFarenheit(state.temperature)), state.sky);
+          document.getElementById("tempValue").innerText = Math.round(kelvinToFarenheit(state.temperature));
+          document.getElementById("skySelect").value = state.sky;
+          updateSky();
+        })
+        .catch((error) => {
+          console.log('error in find temperature and sky!');
+          console.log(error)
+        });
+
+    })
+    .catch((error) => {
+      console.log('error in findLatitudeAndLongitude!');
+      console.log(error)
+    });
+}
+
+const kelvinToFarenheit = (temp) => {
+  return (temp - 273.15) * 9 / 5 + 32;
+}
+
+// const kelvinToCelcius = (temp) => {
+//   return temp - 273.15;
+// }
+
 const registerEventHandlers = () => {
   const increaseTempControl = document.getElementById("increaseTempControl");
   increaseTempControl.addEventListener("click", increaseTemp);
@@ -155,6 +221,12 @@ const registerEventHandlers = () => {
 
   const skySelect = document.getElementById("skySelect");
   skySelect.addEventListener("change", updateSky);
+
+  // const currentTempButton = document.getElementById("currentTempButton");
+  // currentTempButton.addEventListener("click", getCurrentTemp);
+
+  const cityNameInputBtn = document.getElementById("cityNameInputBtn");
+  cityNameInputBtn.addEventListener("click", getCurrentTemp);
 
 };
 

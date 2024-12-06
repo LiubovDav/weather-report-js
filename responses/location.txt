@@ -1,0 +1,192 @@
+GET http://127.0.0.1:5000/location?q=Seattle
+
+First in the list:
+lat
+lon
+
+Response body:
+[
+    {
+        "boundingbox": [
+            "47.4810022",
+            "47.7341354",
+            "-122.459696",
+            "-122.224433"
+        ],
+        "class": "boundary",
+        "display_name": "Seattle, King County, Washington, USA",
+        "icon": "https://locationiq.org/static/images/mapicons/poi_boundary_administrative.p.20.png",
+        "importance": 0.8356641497695181,
+        "lat": "47.6038321",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "-122.330062",
+        "osm_id": "237385",
+        "osm_type": "relation",
+        "place_id": "298216897",
+        "type": "administrative"
+    },
+    {
+        "boundingbox": [
+            "20.7099684",
+            "20.7299684",
+            "-103.3863286",
+            "-103.3663286"
+        ],
+        "class": "place",
+        "display_name": "Seattle, Zapopan, Región Centro, Jalisco, 38901, Mexico",
+        "importance": 0.2434040764476997,
+        "lat": "20.7199684",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "-103.3763286",
+        "osm_id": "4836954932",
+        "osm_type": "node",
+        "place_id": "286622604",
+        "type": "neighbourhood"
+    },
+    {
+        "boundingbox": [
+            "25.1837689",
+            "25.1845505",
+            "121.4465868",
+            "121.4474398"
+        ],
+        "class": "landuse",
+        "display_name": "Seattle, Tamsui District, Taiwan",
+        "importance": 0.21673382238498512,
+        "lat": "25.18415975",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "121.44693998598468",
+        "osm_id": "291707810",
+        "osm_type": "way",
+        "place_id": "212959471",
+        "type": "residential"
+    },
+    {
+        "boundingbox": [
+            "14.4191845",
+            "14.4193677",
+            "120.9180883",
+            "120.9187908"
+        ],
+        "class": "highway",
+        "display_name": "Seattle, ACM Woodstock Homes Phase 9, Imus, Cavite, Calabarzon, 4103, Philippines",
+        "importance": 0.1633873952849622,
+        "lat": "14.4192428",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "120.918312",
+        "osm_id": "29546551",
+        "osm_type": "way",
+        "place_id": "237510925",
+        "type": "residential"
+    },
+    {
+        "boundingbox": [
+            "41.9611659",
+            "41.9657274",
+            "-121.9226362",
+            "-121.9226043"
+        ],
+        "class": "highway",
+        "display_name": "Seattle, Dorris, Siskiyou County, California, 96058, USA",
+        "importance": 0.1633839848935683,
+        "lat": "41.9641881",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "-121.922629",
+        "osm_id": "10671266",
+        "osm_type": "way",
+        "place_id": "297478062",
+        "type": "residential"
+    },
+    {
+        "boundingbox": [
+            "28.8472264",
+            "28.8487875",
+            "-111.9789493",
+            "-111.9780146"
+        ],
+        "class": "highway",
+        "display_name": "Seattle, Nuevo Kino, Bahía Kino, Hermosillo, Sonora, 83336, Mexico",
+        "importance": 0.1633733340962844,
+        "lat": "28.8481394",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "-111.9783605",
+        "osm_id": "307770120",
+        "osm_type": "way",
+        "place_id": "290372337",
+        "type": "residential"
+    },
+    {
+        "boundingbox": [
+            "47.6134405",
+            "47.6135405",
+            "-122.35354",
+            "-122.35344"
+        ],
+        "class": "amenity",
+        "display_name": "Seattle, 2701, Alaskan Way, Belltown, Seattle, King County, Washington, 98121, USA",
+        "importance": 0.11007729839017316,
+        "lat": "47.6134905",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "-122.35349",
+        "osm_id": "53080401",
+        "osm_type": "node",
+        "place_id": "298226021",
+        "type": "ferry_terminal"
+    },
+    {
+        "boundingbox": [
+            "47.6028452",
+            "47.6029452",
+            "-122.3398911",
+            "-122.3397911"
+        ],
+        "class": "amenity",
+        "display_name": "Seattle, Colman Dock, West Edge, Belltown, Seattle, King County, Washington, 98104, USA",
+        "importance": 0.11007729839017316,
+        "lat": "47.6028952",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "-122.3398411",
+        "osm_id": "668442224",
+        "osm_type": "node",
+        "place_id": "298212513",
+        "type": "ferry_terminal"
+    },
+    {
+        "boundingbox": [
+            "-26.1308506",
+            "-26.1307506",
+            "27.9752333",
+            "27.9753333"
+        ],
+        "class": "amenity",
+        "display_name": "Seattle, Cresta Lane, Cresta, Johannesburg Ward 98, Johannesburg, City of Johannesburg Metropolitan Municipality, Gauteng, 2001, South Africa",
+        "icon": "https://locationiq.org/static/images/mapicons/food_cafe.p.20.png",
+        "importance": 0.11007422217135879,
+        "lat": "-26.1308006",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "27.9752833",
+        "osm_id": "614837115",
+        "osm_type": "node",
+        "place_id": "30425689",
+        "type": "cafe"
+    },
+    {
+        "boundingbox": [
+            "39.5876706",
+            "39.5877706",
+            "2.6643712",
+            "2.6644712"
+        ],
+        "class": "amenity",
+        "display_name": "Seattle, Carrer d'Eusebi Estada, Son Oliva, Palma, Balearic Islands, 07004, Spain",
+        "icon": "https://locationiq.org/static/images/mapicons/food_pub.p.20.png",
+        "importance": 0.11006881589990078,
+        "lat": "39.5877206",
+        "licence": "https://locationiq.com/attribution",
+        "lon": "2.6644212",
+        "osm_id": "9269259011",
+        "osm_type": "node",
+        "place_id": "47562397",
+        "type": "pub"
+    }
+]

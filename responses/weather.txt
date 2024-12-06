@@ -1,0 +1,51 @@
+GET http://127.0.0.1:5000/weather?lat=47.6038321&lon=-122.330062
+
+main -> temp (Temperature in Kelvins)
+weather -> main (Sky)
+
+Response body:
+{
+    "base": "stations",
+    "clouds": {
+        "all": 100
+    },
+    "cod": 200,
+    "coord": {
+        "lat": 47.6038,
+        "lon": -122.3301
+    },
+    "dt": 1733450617,
+    "id": 5809844,
+    "main": {
+        "feels_like": 279.11,
+        "grnd_level": 1017,
+        "humidity": 83,
+        "pressure": 1027,
+        "sea_level": 1027,
+        "temp": 281.07,
+        "temp_max": 282.18,
+        "temp_min": 279.22
+    },
+    "name": "Seattle",
+    "sys": {
+        "country": "US",
+        "id": 2041694,
+        "sunrise": 1733413329,
+        "sunset": 1733444317,
+        "type": 2
+    },
+    "timezone": -28800,
+    "visibility": 10000,
+    "weather": [
+        {
+            "description": "overcast clouds",
+            "icon": "04n",
+            "id": 804,
+            "main": "Clouds"
+        }
+    ],
+    "wind": {
+        "deg": 150,
+        "speed": 3.09
+    }
+}

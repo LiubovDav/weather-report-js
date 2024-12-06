@@ -123,6 +123,15 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
+.city-name__input-btn {
+    border: 0;
+    background-color: #1655cc;
+    color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: "Rubik", sans-serif;
+}
+
 .red {
     color: red;
 }
