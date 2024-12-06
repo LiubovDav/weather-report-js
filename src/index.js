@@ -222,8 +222,8 @@ const registerEventHandlers = () => {
   const skySelect = document.getElementById("skySelect");
   skySelect.addEventListener("change", updateSky);
 
-  // const currentTempButton = document.getElementById("currentTempButton");
-  // currentTempButton.addEventListener("click", getCurrentTemp);
+  const currentTempButton = document.getElementById("currentTempButton");
+  currentTempButton.addEventListener("click", getCurrentTemp);
 
   const cityNameInputBtn = document.getElementById("cityNameInputBtn");
   cityNameInputBtn.addEventListener("click", getCurrentTemp);
